@@ -1,0 +1,66 @@
+/* Global Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(134, 150, 160, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 150, 160, 0.3);
+}
+
+/* Premium Selection Color */
+::selection {
+  background-color: rgba(0, 168, 132, 0.25);
+  color: inherit;
+}
+
+/* Global Transitions */
+* {
+  box-shadow: none !important;
+  /* Remove global transition on * in production, it kills performance 
+     Instead, we use targeted transitions.
+  */
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--wa-bg);
+  overflow: hidden; /* App-like feel */
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Utility Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.glass-panel {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--wa-header-bg);
+  border-bottom: 1px solid var(--wa-border);
+}
