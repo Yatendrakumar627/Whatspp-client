@@ -1,5 +1,6 @@
 {
-  "$schema": "https://json.schemastore.org/vercel.json",
+  "installCommand": "npm install --legacy-peer-deps",
+  "buildCommand": "npm run build",
   "routes": [
     {
       "src": "/(.*)",
